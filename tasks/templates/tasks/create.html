@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>Registro de Tareas</h1>
+<form action="{% url 'tasks:create' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="登録する">
+</form>
+
+<br>
+
+<a href="{% url 'tasks:index' %}">戻る</a>
+{% endblock %}
