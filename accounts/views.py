@@ -26,9 +26,9 @@ User = get_user_model()
 # Hasta aquí
 
 
-def exit(request):
-    logout(request)
-    return redirect('/accounts/login')
+# def exit(request):
+#     logout(request)
+#     return redirect('/accounts/login')
 
 class UserCreateAndLoginView(CreateView):
     form_class = CustomUserCreationForm   # cambiar

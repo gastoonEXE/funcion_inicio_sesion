@@ -14,7 +14,7 @@
       <ul>
         {% if user.is_authenticated %}
         <li><a href="{% url 'tasks:index' %}">Lista de Tareas</a></li>
-        <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+        <li><a href="{% url 'exit' %}">Cerrar sesión</a></li>
         <li><a href="{% url 'user_detail' user.pk %}">Detalles Usuario</a></li>    <!-- Apéndice -->
         {% else %}
         <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
