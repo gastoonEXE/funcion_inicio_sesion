@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.urls import reverse_lazy
@@ -20,9 +20,15 @@ from django.contrib.auth.views import (
 )    # Apéndice
 from django.contrib.auth.mixins import UserPassesTestMixin    # Apéndice
 
+from django.contrib.auth import logout
 
 User = get_user_model()
 # Hasta aquí
+
+
+def exit(request):
+    logout(request)
+    return redirect('/accounts/login')
 
 class UserCreateAndLoginView(CreateView):
     form_class = CustomUserCreationForm   # cambiar
